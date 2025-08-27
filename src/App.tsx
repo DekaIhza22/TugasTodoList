@@ -1,36 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Button2 from "./assets/Component/Button";
+import Button from "./assets/Component/Button";
 import TodoList from "./pages/TodoList";
-
-// Button custom
-const Button1 = () => (
-  <button
-    style={{
-      background: "red",
-      border: "none",
-      color: "white",
-      padding: "5px 10px",
-      borderRadius: "3px",
-    }}
-  >
-    Buy Now
-  </button>
-);
-
-const Button3 = () => (
-  <button
-    style={{
-      background: "blue",
-      border: "none",
-      color: "white",
-      padding: "5px 10px",
-      borderRadius: "3px",
-    }}
-  >
-    Test
-  </button>
-);
 
 // Page: Buttons
 function ButtonsLayout() {
@@ -43,9 +14,9 @@ function ButtonsLayout() {
         marginTop: "20px",
       }}
     >
-      <Button1 />
-      <Button2 />
-      <Button3 />
+      <Button label="Buy Now" color="red" />
+      <Button label="Default Blue" /> {/* default color = blue */}
+      <Button label="Test" color="blue" />
     </div>
   );
 }
@@ -59,8 +30,8 @@ function CounterPage() {
       <h2>Counter</h2>
       <p style={{ fontSize: "20px" }}>Count: {count}</p>
       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-        <button onClick={() => setCount(count - 1)}>-</button>
-        <button onClick={() => setCount(count + 1)}>+</button>
+        <Button label="-" color="gray" onClick={() => setCount(count - 1)} />
+        <Button label="+" color="green" onClick={() => setCount(count + 1)} />
       </div>
     </div>
   );

@@ -1,19 +1,26 @@
-interface Props{
-    children: React.ReactNode
+interface ButtonProps {
+  label: string;
+  color?: string;
+  padding?: string;
+  onClick?: () => void;
 }
-export default function Tombol(){
-return(
-    <button 
-    style={{
-        background: "red",
+
+const Button = ({ label, color = "blue", padding = "5px 10px", onClick }: ButtonProps) => {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        background: color,
         border: "none",
         color: "white",
-        padding: "5px 10px",
-        borderRadius: "3px",
-    }}
-    type="submit"
+        padding,
+        borderRadius: "5px",
+        cursor: "pointer",
+      }}
     >
-        Never Buy
+      {label}
     </button>
- );
-}
+  );
+};
+
+export default Button;
