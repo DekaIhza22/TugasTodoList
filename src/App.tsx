@@ -41,7 +41,7 @@ function App() {
   return (
     <Routes>
       <Route path="/button" element={<ButtonsLayout />} />
-      <Route path="/todo" element={<TodoList />} />
+      <Route path="/" element={<TodoList />} />
       <Route path="/counter" element={<CounterPage />} />
     </Routes>
   );
